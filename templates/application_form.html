@@ -5,10 +5,24 @@
     <script src="/static/js/application_form.js"></script>
 </head>
 <body>
-    <form id = "myform" method = "post">
-        <span>First Name</span> <input type = "text"  name = "firstname">   
-        <span>Last Name </span> <input type = "text"  name = "lastname">  
-        <input type = "button" id = "submit" value = "submit" onClick=''>
+    <form id = "myform">
+        <span>First Name</span> <input type = "text"  name = "firstname" class="info">
+        <br> 
+        <span>Last Name</span> <input type = "text"  name = "lastname" class="info"> 
+       
+
+        <h2>references</h2>
+
+        <div id="references">
+            <div class="reference-form">
+                <span>Name: </span> <input type = "text"  name = "refname">
+                <span>Phone: </span><input type = "text"  name = "refphone">
+            </div>
+        </div>
+        <input type = "button" id="add-reference" value="Add">
+
+        <br>
+        <div><input type = "submit" value = "submit"></div>
     </form>
 
 </body>

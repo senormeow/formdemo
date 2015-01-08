@@ -4,6 +4,7 @@ import cherrypy
 import os
 import jinja2
 import re
+import json
 
 import smtplib
 from email.mime.text import MIMEText
@@ -19,8 +20,19 @@ class ApplicationForm(object):
 
     index.exposed = True
 
+
+class ApplicationFormSubmit(object):
+    def index(self, **kwargs):
+        jsonData = json.loads(kwargs["json"])
+
+        return "<pre>" + json.dumps(jsonData,indent=4) + "</pre>"
+
+    index.exposed = True
+
+
 class Root(object):
     application_form = ApplicationForm()
+    application_form_submit = ApplicationFormSubmit()
 
     def index(self):
         t = env.get_template('index.html')
