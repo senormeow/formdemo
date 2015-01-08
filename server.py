@@ -25,7 +25,9 @@ class ApplicationFormSubmit(object):
     def index(self, **kwargs):
         jsonData = json.loads(kwargs["json"])
 
-        return "<pre>" + json.dumps(jsonData,indent=4) + "</pre>"
+        jsonTxt = json.dumps(jsonData,indent=4)
+        print jsonTxt
+        return "<pre>" + jsonTxt + "</pre>"
 
     index.exposed = True
 
